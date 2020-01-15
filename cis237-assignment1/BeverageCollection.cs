@@ -8,5 +8,6 @@ namespace cis237_assignment1
 {
     class BeverageCollection
     {
+        //BeverageID
     }
 }

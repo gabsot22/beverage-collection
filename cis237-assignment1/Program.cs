@@ -12,10 +12,11 @@ namespace cis237_assignment1
         {
             // Making a new instance of UI class
             UserInterface ui = new UserInterface();
-
             
-            Beverage beverageList = new Beverage();
             
+            Beverage beverageList = new Beverage(39171, "1221 Cabernet Cuvee", "6 / 750 ml", 70.1m, "TRUE");
+            
+            BeverageCollection bevCollection = new BeverageCollection();
 
             // 
             int choice = ui.UserInput();
@@ -24,9 +25,10 @@ namespace cis237_assignment1
             while (choice != 5)
             {
                 // See if the input they sent is equal to 1
-                if (choice == 1)
+                if (choice == 3)
                 {
-                    BeverageCollection bevCollection = new BeverageCollection();
+                    CSVProcessor beverageItemCollection = new CSVProcessor(39171, "1221 Cabernet Cuvee", "6 / 750 ml", 70.1m, "TRUE");
+
                 }
             }
 
