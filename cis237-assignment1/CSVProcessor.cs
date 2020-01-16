@@ -10,7 +10,7 @@ namespace cis237_assignment1
 {
     class CSVProcessor
     {
-        // Class for reading CSV file and creating the beverageItemCollection list
+        // Class for reading CSV file
 
         // No variables. But could always have some if needed.
         // No Properties
@@ -40,6 +40,7 @@ namespace cis237_assignment1
                     processLine(line, beverages, counter++);
                 }
 
+                
                 // Read through the whole file, so we can return true
                 return true;
             }

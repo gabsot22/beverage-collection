@@ -15,19 +15,18 @@ namespace cis237_assignment1
         // Methods
         public int UserInput()
         {
+            // Prints out a menu for the user
+            PrintMenu();
+
+            // Get input from user
+            string input = Console.ReadLine();
+
             // Makes an array to hold instances in Beverage class
             Beverage[] beverages = new Beverage[3942];
 
-            // Prints out a menu for the user
-            PrintMenu();
-            
-            // Get input from user
-            string input = Console.ReadLine();
-            
-
             while (input != "1" && input != "2" && input != "3" && input != "4" && input != "5")
             {
-                
+
                 // Print Error Message
                 PrintErrorMessage();
 
@@ -37,20 +36,21 @@ namespace cis237_assignment1
                 // Gets the input from the user again
                 input = Console.ReadLine();
             }
+
+
             if (input == "1")
             {
-                // Make a string for the path to the csv file
-                string pathToCsv = "../../../datafiles/beverage_list"; // starts at bin debug. Each .. goes back one folder
 
-                // Make instance of CSVProcessor
-                CSVProcessor csvProcessor = new CSVProcessor();
+                    // Make a string for the path to the csv file
+                    string pathToCsv = "../../../datafiles/beverage_list.csv"; // starts at bin debug. Each .. goes back one folder
 
-                // Call the ImportCSV method sending over the path and the array to store the read in records to.
-                csvProcessor.ImportCsv(pathToCsv, beverages);
+                    // Make instance of CSVProcessor
+                    CSVProcessor csvProcessor = new CSVProcessor();
 
-                Console.WriteLine("Loaded beverage list");
+                    // Call the ImportCSV method sending over the path and the array to store the read in records to.
+                    csvProcessor.ImportCsv(pathToCsv, beverages);
 
-
+                    Console.WriteLine("Loaded beverage list");
 
 
             }
@@ -60,7 +60,7 @@ namespace cis237_assignment1
                 string outputString = "";
 
 
-                // Print out the beverages in an array
+                //// Print out the beverages in an array
                 foreach (Beverage beverage in beverages)
                 {
                     // Check to ensure there is a beverage object to be able to access properties on
@@ -69,6 +69,14 @@ namespace cis237_assignment1
                         outputString += beverage.ToString() + Environment.NewLine;
                     }
                 }
+            }
+            if (input == "3")
+            {
+
+            }
+            if (input == "4")
+            {
+
             }
 
             return Int32.Parse(input);
@@ -98,5 +106,5 @@ namespace cis237_assignment1
 
     }
 
-    
+
 }
