@@ -73,7 +73,7 @@ namespace cis237_assignment1
             }
         }
 
-        private void processLine(string line, Beverage[] beverages, int index)
+        public void processLine(string line, Beverage[] beverages, int index)
         {
             // Declare array of parts that will contain the results of splitting the read in string
             string[] parts = line.Split(',');

@@ -12,13 +12,18 @@ namespace cis237_assignment1
         {
             // Making a new instance of UI class
             UserInterface ui = new UserInterface();
-            CSVProcessor csvProcessor = new CSVProcessor();
+
             
+            
+            // Making a new instance of the Beverage class
             Beverage beverageList = new Beverage(39171, "1221 Cabernet Cuvee", "6 / 750 ml", 70.1m, "TRUE");
             
+            
+
+            // Making a new instance of the BeverageCollection class
             BeverageCollection bevCollection = new BeverageCollection();
 
-            // 
+            // Get input from the user
             int choice = ui.UserInput();
 
             // While the choice they selected is not 5, continue to do work
@@ -27,13 +32,14 @@ namespace cis237_assignment1
                 // See if the input they sent is equal to 1
                 if (choice == 1)
                 {
-                    ui.UserInput();
+                    
                     choice = ui.UserInput();
 
                 }
                 if (choice == 2)
                 {
-                    ui.OptionTwo();
+                    ui.ToString();
+
                     choice = ui.UserInput();
                 }
                 if (choice == 3)
