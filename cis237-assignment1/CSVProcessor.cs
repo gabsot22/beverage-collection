@@ -12,153 +12,83 @@ namespace cis237_assignment1
     {
         // Class for reading CSV file and creating the beverageItemCollection list
 
+        // No variables. But could always have some if needed.
+        // No Properties
+        // No Constructor
 
-        // Variables / Backing fields
-        private int _beverageID;
-        private string _beverageName;
-        private decimal _beveragePrice;
-        private string _beveragePack;
-        private string _beverageActiveTF;
-
-        // Properties (to use in Program.cs)
-        public int BeverageID
+        // Methods
+        public bool ImportCsv(string pathToCSVFile, Beverage[] beverages)
         {
-            get { return _beverageID; }
-            set { _beverageID = value; }
-        }
-
-        public string BeverageName
-        {
-            get { return _beverageName; }
-            set { _beverageName = value; }
-        }
-
-        public string BeveragePack
-        {
-            get { return _beveragePack; }
-            set { _beveragePack = value; }
-        }
-        public decimal BeveragePrice
-        {
-            get { return _beveragePrice; }
-            set { _beveragePrice = value; }
-        }
-
-        public string BeverageActiveTF
-        {
-            get { return _beverageActiveTF; }
-            set { _beverageActiveTF = value; }
-        }
-
-        // Public Methods
-
-        /* Second attempt to read file
-        public void readFile()
-        {
-            int[] beverageID = new int[9999]; // Array to hold int beverageID
-            string[] beverageName = new string[9999]; // Array to hold int beverageName
-            string[] beveragePack = new string[9999]; // Array to hold int beveragePack
-            decimal[] beveragePrice = new decimal[9999]; // Array to hold int beveragePrice
-            string[] beverageActiveTF = new string[9999]; // Array to hold int beverageActiveTF
-
-            int indexCounter = 0; // SETS INDEX COUNTER = 0
+            // Decalre the streamReader
+            StreamReader streamReader = null;
 
             try
             {
-                StreamReader idNamePackPriceActiveTF = new StreamReader("beverage_list.csv");  // CREATES INSTANCE OF STREAM READER (OPENS FILE)
+                // Decalre a string for the line
+                string line;
 
+                // Make instance of the stream reader
+                streamReader = new StreamReader(pathToCSVFile);
 
-                while (idNamePackPriceActiveTF.Peek() != -1)
+                // Setup a counter to use as an index for the array
+                int counter = 0;
+
+                // While we are still reading a line from the file
+                while((line = streamReader.ReadLine()) != null)
                 {
-                    string inputString = idNamePackPriceActiveTF.ReadLine(); // READ & PROCESS 1 RECORD AT A TIME
-                    var fields = inputString.Split(',');    // READ RECORD USING FILE DELIMITER (,) ASSIGN TO ARRAY
-
-                    beverageID[indexCounter] = Convert.ToInt32(fields[0]);
-                    beverageName[indexCounter] = fields[1];
-                    beveragePack[indexCounter] = fields[2];
-                    beveragePrice[indexCounter] = Convert.ToDecimal(fields[3]);
-                    beverageActiveTF[indexCounter] = fields[4];
-
-                    indexCounter++; // ADD 1
-
+                    // Process the line
+                    processLine(line, beverages, counter++);
                 }
 
-                idNamePackPriceActiveTF.Close(); // CLOSE
-
-            }
-            catch (Exception ex) // ERR MESSAGE
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-            for (int i = 0; i < indexCounter; i++) // DISPLAYS ARRAYS
-            {
-                Console.Write( beverageID[i]);
-                Console.Write( beverageName[i]);
-                Console.Write( beveragePack[i]);
-                Console.WriteLine();
-            }
-        }
-        */
-
-        /*
-         * 1st attempt to read the file
-        public static string[] readRecord(string searchTerm, string filepath, int positionOfSearchTerm)
-        {
-            positionOfSearchTerm--; // Allows method to be more user friendly (first field is 1 instead of 0)
-            string[] recordNotFound = { "Record not found" };
-
-            try
-            {
-                string[] lines = System.IO.File.ReadAllLines(@filepath); // Reads every line into a string array
-
-                for (int i = 0; i < lines.Length; i++)
-                {
-                    string[] fields = lines[i].Split(',');
-                    if (recordMatch(searchTerm, fields, positionOfSearchTerm))
-                    {
-                        Console.WriteLine("Beverage found");
-                        return fields;
-                    }
-                }
-                return recordNotFound;
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine("Error has occured");
-                return recordNotFound; // Re-displays "record not found"
-                throw new ApplicationException("Error has occured :", ex); // Prints error message in console
-            }
-        }
-
-        public static bool recordMatch(string searchTerm, string[] record, int positionOfSearchTerm)
-        {
-            if (record[positionOfSearchTerm].Equals(searchTerm))
-            {
+                // Read through the whole file, so we can return true
                 return true;
             }
-            return false;
-        }
-        */
+            catch (FileNotFoundException ex)
+            {
+                // Output the exception and the stacktrace for the exception
+                Console.WriteLine(ex.ToString());
+                Console.WriteLine();
+                Console.WriteLine(ex.StackTrace);
 
-        public override string ToString()
+                return false;
+            }
+            catch (Exception ex)
+            {
+                // Output the exception and the stacktrace for the exception
+                Console.WriteLine(ex.ToString());
+                Console.WriteLine();
+                Console.WriteLine(ex.StackTrace);
+
+                return false;
+            }
+            finally
+            {
+                // Stuff that will run regardless of whether try succeeds or catch gets called.
+
+                // If the stream reader was instantciated, make sure it is closed before exiting the reader
+                if (streamReader != null)
+                {
+                    streamReader.Close();
+                }
+            }
+        }
+
+        private void processLine(string line, Beverage[] beverages, int index)
         {
-            return  _beverageID.ToString() + " " +
-                   _beverageName + " " +
-                   _beveragePack + " " +
-                   _beveragePrice.ToString("c") + " " +
-                   _beverageActiveTF;
+            // Declare array of parts that will contain the results of splitting the read in string
+            string[] parts = line.Split(',');
+
+            // Assign each part to a variable
+            int bevID = int.Parse(parts[0]);
+            string bevName = parts[1];
+            string bevPack = parts[2];
+            decimal bevPrice = decimal.Parse(parts[3]);
+            string bevActiveTF = parts[4];
+
+            // Add a new beverage into the array that was passed in
+            beverages[index] = new Beverage(bevID, bevName, bevPack, bevPrice, bevActiveTF);
+
         }
 
-
-        // Constructors (always public)
-        public CSVProcessor(int BeverageID, string BeverageName, string BeveragePack, decimal BeveragePrice, string BeverageActiveTF)
-        {
-            this._beverageID = BeverageID;
-            this._beverageName = BeverageName;
-            this._beveragePack = BeveragePack;
-            this._beveragePrice = BeveragePrice;
-            this._beverageActiveTF = BeverageActiveTF;
-        }
     }
 }

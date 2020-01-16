@@ -17,7 +17,7 @@ namespace cis237_assignment1
         {
             // Prints out a menu for the user
             PrintMenu();
-
+            
             // Get input from user
             string input = Console.ReadLine();
             
@@ -34,8 +34,15 @@ namespace cis237_assignment1
                 // Gets the input from the user again
                 input = Console.ReadLine();
             }
+            
+            
 
             return Int32.Parse(input);
+        }
+
+        public void OptionTwo(string optionTwoString)
+        {
+            Console.WriteLine(optionTwoString);
         }
 
         private void PrintMenu()

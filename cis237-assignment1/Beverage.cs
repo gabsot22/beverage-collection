@@ -27,17 +27,16 @@ namespace cis237_assignment1
             get { return _beverageName; }
             set { _beverageName = value; }
         }
+        public string BeveragePack
+        {
+            get { return _beveragePack; }
+            set { _beveragePack = value; }
+        }
 
         public decimal BeveragePrice
         {
             get { return _beveragePrice; }
             set { _beveragePrice = value; }
-        }
-
-        public string BeveragePack
-        {
-            get { return _beveragePack; }
-            set { _beveragePack = value; }
         }
 
         public string BeverageActiveTF
@@ -46,10 +45,6 @@ namespace cis237_assignment1
             set { _beverageActiveTF = value; }
         }
 
-        // Public Methods
-
-
-        
         public override string ToString()
         {
             return _beverageID.ToString() + " " +
