@@ -24,7 +24,7 @@ namespace cis237_assignment1
 
             try
             {
-                // Decalre a string for the line
+                // Declare a string for the line
                 string line;
 
                 // Make instance of the stream reader
@@ -80,7 +80,7 @@ namespace cis237_assignment1
             string[] parts = line.Split(',');
 
             // Assign each part to a variable
-            int bevID = int.Parse(parts[0]);
+            string bevID = parts[0];
             string bevName = parts[1];
             string bevPack = parts[2];
             decimal bevPrice = decimal.Parse(parts[3]);

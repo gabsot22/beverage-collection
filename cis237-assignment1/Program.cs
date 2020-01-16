@@ -22,7 +22,7 @@ namespace cis237_assignment1
             
             
             // Making a new instance of the Beverage class
-            Beverage beverageList = new Beverage(39171, "1221 Cabernet Cuvee", "6 / 750 ml", 70.1m, "TRUE");
+            Beverage beverageList = new Beverage("39171", "1221 Cabernet Cuvee", "6 / 750 ml", 70.1m, "TRUE");
 
             
 
@@ -35,29 +35,7 @@ namespace cis237_assignment1
             // While the choice they selected is not 5, continue to do work
             while (choice != 5)
             {
-                //// See if the input they sent is equal to 1
-                //if (choice == 1)
-                //{
-                    
-                //    choice = ui.UserInput();
 
-                //}
-                //if (choice == 2)
-                //{
-                //    ui.ToString();
-
-                //    choice = ui.UserInput();
-                //}
-                //if (choice == 3)
-                //{
-                    
-                //    choice = ui.UserInput();
-                    
-                //}
-                //if (choice == 4)
-                //{
-                //    choice = ui.UserInput();
-                //}
             }
 
             // Re-display for input

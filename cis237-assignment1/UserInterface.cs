@@ -41,24 +41,25 @@ namespace cis237_assignment1
             if (input == "1")
             {
 
-                    // Make a string for the path to the csv file
-                    string pathToCsv = "../../../datafiles/beverage_list.csv"; // starts at bin debug. Each .. goes back one folder
+                // Make a string for the path to the csv file
+                string pathToCsv = "../../../datafiles/beverage_list.csv"; // starts at bin debug. Each .. goes back one folder
 
-                    // Make instance of CSVProcessor
-                    CSVProcessor csvProcessor = new CSVProcessor();
+                // Make instance of CSVProcessor
+                CSVProcessor csvProcessor = new CSVProcessor();
 
-                    // Call the ImportCSV method sending over the path and the array to store the read in records to.
-                    csvProcessor.ImportCsv(pathToCsv, beverages);
+                // Call the ImportCSV method sending over the path and the array to store the read in records to.
+                csvProcessor.ImportCsv(pathToCsv, beverages);
 
-                    Console.WriteLine("Loaded beverage list");
+                Console.WriteLine("Loaded beverage list");
 
-
+                UserInput();
             }
             if (input == "2")
             {
                 // Create a string that can be concated t
                 string outputString = "";
 
+                //beverages[0] = new Beverage("456", "Corona", "12.5", 12.5m ,"True"); TEST
 
                 //// Print out the beverages in an array
                 foreach (Beverage beverage in beverages)
@@ -69,7 +70,12 @@ namespace cis237_assignment1
                         outputString += beverage.ToString() + Environment.NewLine;
                     }
                 }
+
+                OptionTwo(outputString);
+                Console.WriteLine(); // Empty space
+                UserInput();
             }
+
             if (input == "3")
             {
 

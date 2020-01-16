@@ -9,14 +9,14 @@ namespace cis237_assignment1
     class Beverage
     {
         // Variables / Backing fields
-        private int _beverageID;
+        private string _beverageID;
         private string _beverageName;
         private decimal _beveragePrice;
         private string _beveragePack;
         private string _beverageActiveTF;
 
         // Properties (to use in Program.cs)
-        public int BeverageID
+        public string BeverageID
         {
             get { return _beverageID; }
             set { _beverageID = value; }
@@ -56,7 +56,7 @@ namespace cis237_assignment1
         
 
         // Constructors (always public)
-        public Beverage(int BeverageID, string BeverageName, string BeveragePack, decimal BeveragePrice, string BeverageActiveTF)
+        public Beverage(string BeverageID, string BeverageName, string BeveragePack, decimal BeveragePrice, string BeverageActiveTF)
         {
             this._beverageID = BeverageID;
             this._beverageName = BeverageName;
