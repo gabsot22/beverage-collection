@@ -47,7 +47,7 @@ namespace cis237_assignment1
 
         public override string ToString()
         {
-            return _beverageID.ToString() + " " +
+            return _beverageID + " " +
                    _beverageName + " " +
                    _beveragePack + " " +
                    _beveragePrice.ToString("c") + " " +

@@ -36,11 +36,10 @@ namespace cis237_assignment1
                 // Gets the input from the user again
                 input = Console.ReadLine();
             }
-
+                                 
 
             if (input == "1")
             {
-
                 // Make a string for the path to the csv file
                 string pathToCsv = "../../../datafiles/beverage_list.csv"; // starts at bin debug. Each .. goes back one folder
 
@@ -52,14 +51,35 @@ namespace cis237_assignment1
 
                 Console.WriteLine("Loaded beverage list");
 
-                UserInput();
+
+
+                // TEST FOR OUTPUT IMMEDIATLY AFTER LOADING...WORKS!
+                //string outputString = "";
+
+
+
+                ////// Print out the beverages in an array
+                //foreach (Beverage beverage in beverages)
+                //{
+                //    // Check to ensure there is a beverage object to be able to access properties on
+                //    if (beverage != null)
+                //    {
+                //        outputString += beverage.ToString() + Environment.NewLine;
+                //    }
+                //}
+
+                //OptionTwo(outputString);
+
+                //Console.WriteLine(); // Empty space
+
+                UserInput();    
             }
             if (input == "2")
             {
                 // Create a string that can be concated t
                 string outputString = "";
 
-                //beverages[0] = new Beverage("456", "Corona", "12.5", 12.5m ,"True"); TEST
+                
 
                 //// Print out the beverages in an array
                 foreach (Beverage beverage in beverages)
@@ -72,13 +92,18 @@ namespace cis237_assignment1
                 }
 
                 OptionTwo(outputString);
+
                 Console.WriteLine(); // Empty space
                 UserInput();
             }
 
             if (input == "3")
             {
+                Console.WriteLine("Input beverage ITEM ID: ");
+                // Making a new instance of the BeverageCollection class
+                BeverageCollection bevCollection = new BeverageCollection();
 
+                
             }
             if (input == "4")
             {

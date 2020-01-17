@@ -88,7 +88,7 @@ namespace cis237_assignment1
 
             // Add a new beverage into the array that was passed in
             beverages[index] = new Beverage(bevID, bevName, bevPack, bevPrice, bevActiveTF);
-
+            
         }
 
     }

@@ -15,6 +15,7 @@ namespace cis237_assignment1
     {
         static void Main(string[] args)
         {
+            
             // Making a new instance of UI class
 
             UserInterface ui = new UserInterface();
@@ -25,9 +26,6 @@ namespace cis237_assignment1
             Beverage beverageList = new Beverage("39171", "1221 Cabernet Cuvee", "6 / 750 ml", 70.1m, "TRUE");
 
             
-
-            // Making a new instance of the BeverageCollection class
-            BeverageCollection bevCollection = new BeverageCollection();
 
             // Get input from the user
             int choice = ui.UserInput();
