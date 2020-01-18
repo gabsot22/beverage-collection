@@ -28,6 +28,9 @@ namespace cis237_assignment1
             // Makes an array to hold instances in Beverage class
             Beverage[] beverages = new Beverage[3942];
 
+            // Makes an array to hold instances in BeverageCollection class
+            BeverageCollection[] beveragesCollection = new BeverageCollection[3942];
+
 
             // Get input from the user
             int choice = ui.UserInput();
@@ -81,6 +84,7 @@ namespace cis237_assignment1
                     
 
                 }
+                // Add a new beverage
                 if (choice == 4)
                 {
 

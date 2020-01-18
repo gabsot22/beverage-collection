@@ -21,7 +21,7 @@ namespace cis237_assignment1
         {
             // Decalre the streamReader
             StreamReader streamReader = null;
-
+          
             try
             {
                 // Declare a string for the line
@@ -88,6 +88,11 @@ namespace cis237_assignment1
 
             // Add a new beverage into the array that was passed in
             beverages[index] = new Beverage(bevID, bevName, bevPack, bevPrice, bevActiveTF);
+            
+        }
+
+        public void searchLine(string line, BeverageCollection[] beverageCollection, int index)
+        {
             
         }
 

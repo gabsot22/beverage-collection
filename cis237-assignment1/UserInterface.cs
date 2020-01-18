@@ -51,6 +51,7 @@ namespace cis237_assignment1
                 Console.WriteLine();
                 Console.WriteLine("Input beverage ITEM ID: ");
                 Console.WriteLine();
+                string search = Console.ReadLine();
             }
             if (input == "4")
             {
