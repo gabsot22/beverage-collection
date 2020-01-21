@@ -9,6 +9,7 @@ namespace cis237_assignment1
     class UserInterface
     {
         // No Variables
+        bool runOnce = false;
         // No Properties
         // No Constructors
 
@@ -34,24 +35,37 @@ namespace cis237_assignment1
                 input = Console.ReadLine();
             }
 
-            if (input == "1")
+            if (input == "1" && runOnce == false)
             {
                 Console.WriteLine();
                 Console.WriteLine("Loaded beverage list");
                 Console.WriteLine();
+
+                runOnce = true;
             }
-            if (input == "2")
+            else
+            {
+                Console.WriteLine("Already Loaded List");
+            }
+    
+            if (input == "2" && runOnce == true)
             {
                 Console.WriteLine();
                 Console.WriteLine("Printed list successfully");
                 Console.WriteLine();
             }
+            else
+            {
+                Console.WriteLine("Must Load list once");
+            }
+
             if (input == "3")
             {
                 Console.WriteLine();
                 Console.WriteLine("Input beverage ITEM ID: ");
                 Console.WriteLine();
-                string search = Console.ReadLine();
+
+                
             }
             if (input == "4")
             {

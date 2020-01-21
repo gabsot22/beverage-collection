@@ -19,8 +19,6 @@ namespace cis237_assignment1
             // Making a new instance of UI class
 
             UserInterface ui = new UserInterface();
-
-            
             
             // Making a new instance of the Beverage class
             Beverage beverageList = new Beverage("39171", "1221 Cabernet Cuvee", "6 / 750 ml", 70.1m, "TRUE");
@@ -81,7 +79,20 @@ namespace cis237_assignment1
                     // Making a new instance of the BeverageCollection class
                     BeverageCollection bevCollection = new BeverageCollection();
 
-                    
+                    string beverageSearch = Console.ReadLine();
+
+                    //bool contains = false;
+                    //for (int i = 0; i < beverages.Length; i++)
+                    //{
+                    //    if (beverageSearch = beverages) ;
+                    //    {
+                    //        contains = true;
+                    //    }
+                    //}
+
+                    // bevCollection.Search(beverages);
+
+
 
                 }
                 // Add a new beverage
