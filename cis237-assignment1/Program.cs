@@ -47,7 +47,7 @@ namespace cis237_assignment1
                     CSVProcessor csvProcessor = new CSVProcessor();
 
                     // Call the ImportCSV method sending over the path and the array to store the read in records to.
-                    csvProcessor.ImportCsv(pathToCsv, beverages);
+                    csvProcessor.ImportCsv(pathToCsv, beverages, beveragesCollection);
 
                     choice = ui.UserInput();
                 }
@@ -77,20 +77,9 @@ namespace cis237_assignment1
                 if (choice == 3)
                 {
                     // Making a new instance of the BeverageCollection class
-                    BeverageCollection bevCollection = new BeverageCollection();
+                    BeverageCollection bevCollection = new BeverageCollection("1221 Cabernet Cuvee");
 
-                    string beverageSearch = Console.ReadLine();
-
-                    //bool contains = false;
-                    //for (int i = 0; i < beverages.Length; i++)
-                    //{
-                    //    if (beverageSearch = beverages) ;
-                    //    {
-                    //        contains = true;
-                    //    }
-                    //}
-
-                    // bevCollection.Search(beverages);
+                    bevCollection.Search(beveragesCollection);
 
 
 

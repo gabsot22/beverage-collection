@@ -21,7 +21,7 @@ namespace cis237_assignment1
 
             // Get input from user
             string input = Console.ReadLine();
-            
+
             while (input != "1" && input != "2" && input != "3" && input != "4" && input != "5")
             {
 
@@ -35,28 +35,18 @@ namespace cis237_assignment1
                 input = Console.ReadLine();
             }
 
-            if (input == "1" && runOnce == false)
+            if (input == "1")
             {
                 Console.WriteLine();
                 Console.WriteLine("Loaded beverage list");
                 Console.WriteLine();
 
-                runOnce = true;
             }
-            else
-            {
-                Console.WriteLine("Already Loaded List");
-            }
-    
-            if (input == "2" && runOnce == true)
+            if (input == "2")
             {
                 Console.WriteLine();
                 Console.WriteLine("Printed list successfully");
                 Console.WriteLine();
-            }
-            else
-            {
-                Console.WriteLine("Must Load list once");
             }
 
             if (input == "3")
@@ -64,15 +54,17 @@ namespace cis237_assignment1
                 Console.WriteLine();
                 Console.WriteLine("Input beverage ITEM ID: ");
                 Console.WriteLine();
-
                 
+
             }
             if (input == "4")
             {
-
+                Console.WriteLine();
+                Console.WriteLine("Add a beverage! ");
+                Console.WriteLine();
             }
 
-            return Int32.Parse(input);
+                return Int32.Parse(input);
         }
 
         public void OptionTwo(string outputString)

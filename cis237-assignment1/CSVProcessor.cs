@@ -17,7 +17,7 @@ namespace cis237_assignment1
         // No Constructor
 
         // Methods
-        public bool ImportCsv(string pathToCSVFile, Beverage[] beverages)
+        public bool ImportCsv(string pathToCSVFile, Beverage[] beverages, BeverageCollection[] beverageCollections)
         {
             // Decalre the streamReader
             StreamReader streamReader = null;
@@ -37,7 +37,7 @@ namespace cis237_assignment1
                 while((line = streamReader.ReadLine()) != null)
                 {
                     // Process the line
-                    processLine(line, beverages, counter++);
+                    processLine(line, beverages, beverageCollections, counter++);
                 }
 
                 
@@ -74,7 +74,7 @@ namespace cis237_assignment1
             }
         }
 
-        public void processLine(string line, Beverage[] beverages, int index)
+        public void processLine(string line, Beverage[] beverages, BeverageCollection[] beveragesCollection, int index)
         {
             // Declare array of parts that will contain the results of splitting the read in string
             string[] parts = line.Split(',');
@@ -88,7 +88,7 @@ namespace cis237_assignment1
 
             // Add a new beverage into the array that was passed in
             beverages[index] = new Beverage(bevID, bevName, bevPack, bevPrice, bevActiveTF);
-
+            beveragesCollection[index] = new BeverageCollection(bevName);
             
             
         }
