@@ -12,7 +12,7 @@ namespace cis237_assignment1
     {
         // Class for reading CSV file
 
-        // No variables. But could always have some if needed.
+        // No variables
         // No Properties
         // No Constructor
 

@@ -30,12 +30,19 @@ namespace cis237_assignment1
             string beverageName = Console.ReadLine();
 
             bool match = false;
+
+            
             for (int i = 0; i < beverageCollections.Length; i++)
             {
-                //if (beverageName == beverageCollections)
+                Console.WriteLine(beverageCollections[i]);
+                //if (beverageName == beverageCollections[i])
                 //{
                 //    match = true;
                 //}
+            }
+            if (match == true)
+            {
+                Console.WriteLine("Match has been found");
             }
         }
 

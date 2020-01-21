@@ -17,14 +17,16 @@ namespace cis237_assignment1
         {
             
             // Making a new instance of UI class
-
             UserInterface ui = new UserInterface();
             
             // Making a new instance of the Beverage class
             Beverage beverageList = new Beverage("39171", "1221 Cabernet Cuvee", "6 / 750 ml", 70.1m, "TRUE");
-
             // Makes an array to hold instances in Beverage class
             Beverage[] beverages = new Beverage[3942];
+
+            // Making a new instance of the BeverageCollection class
+            BeverageCollection bevCollection = new BeverageCollection("1221 Cabernet Cuvee");
+
 
             // Makes an array to hold instances in BeverageCollection class
             BeverageCollection[] beveragesCollection = new BeverageCollection[3942];
@@ -47,7 +49,7 @@ namespace cis237_assignment1
                     CSVProcessor csvProcessor = new CSVProcessor();
 
                     // Call the ImportCSV method sending over the path and the array to store the read in records to.
-                    csvProcessor.ImportCsv(pathToCsv, beverages, beveragesCollection);
+                    csvProcessor.ImportCsv(pathToCsv, beverages);
 
                     choice = ui.UserInput();
                 }
@@ -76,18 +78,37 @@ namespace cis237_assignment1
                 // Search for beverage ID
                 if (choice == 3)
                 {
-                    // Making a new instance of the BeverageCollection class
-                    BeverageCollection bevCollection = new BeverageCollection("1221 Cabernet Cuvee");
 
-                    bevCollection.Search(beveragesCollection);
+                    string beverageName = Console.ReadLine();
+                    bool match = false;
+
+                    for (int i = 0; i < beverages.Length; i++)
+                    {
+                        if (beverageName == beverages[i])
+                        {
+                            match = true;
+                        }
+                    }
+                    if (match == true)
+                    {
+                        Console.WriteLine("Match has been found");
+                    }
 
 
 
+
+                    Console.WriteLine(); // Empty space
+
+                    choice = ui.UserInput();
                 }
                 // Add a new beverage
                 if (choice == 4)
                 {
 
+                    
+                    Console.WriteLine(); // Empty space
+
+                    choice = ui.UserInput();
                 }
             }
 
