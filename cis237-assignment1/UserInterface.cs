@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Gabriel Soto
+ * CIS 237 MW 6:00-8:15pm
+ * 1/22/20
+ * */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +12,9 @@ namespace cis237_assignment1
 {
     class UserInterface
     {
-        // No Variables
+        // Variable for only loading list once
         bool runOnce = false;
+
         // No Properties
         // No Constructors
 
@@ -35,13 +40,23 @@ namespace cis237_assignment1
                 input = Console.ReadLine();
             }
 
-            if (input == "1")
+            
+            if (input == "1" && runOnce == false )
             {
                 Console.WriteLine();
                 Console.WriteLine("Loaded beverage list");
                 Console.WriteLine();
 
+                // Change boolean to true so you cant load list again
+                runOnce = true; 
             }
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine("Already Loaded List");
+                Console.WriteLine();
+            }
+            
             if (input == "2")
             {
                 Console.WriteLine();
@@ -52,9 +67,11 @@ namespace cis237_assignment1
             if (input == "3")
             {
                 Console.WriteLine();
-                Console.WriteLine("Input beverage ITEM ID: ");
+                Console.WriteLine("Input beverage info exactly how it is displayed in the list ");
                 Console.WriteLine();
+
                 
+
 
             }
             if (input == "4")
@@ -64,14 +81,17 @@ namespace cis237_assignment1
                 Console.WriteLine();
             }
 
+                // Return the input
                 return Int32.Parse(input);
         }
 
+        // Method for outputting array
         public void OptionTwo(string outputString)
         {
             Console.WriteLine(outputString);
         }
 
+        // Menu
         private void PrintMenu()
         {
             Console.WriteLine("Select one of the options :)");
@@ -83,6 +103,7 @@ namespace cis237_assignment1
             Console.WriteLine();
         }
 
+        // Error Message
         private void PrintErrorMessage()
         {
             Console.WriteLine("That is not one of the options");

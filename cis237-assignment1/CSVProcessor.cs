@@ -17,7 +17,7 @@ namespace cis237_assignment1
         // No Constructor
 
         // Methods
-        public bool ImportCsv(string pathToCSVFile, Beverage[] beverages, BeverageCollection[] beverageCollections)
+        public bool ImportCsv(string pathToCSVFile, Beverage[] beverages)
         {
             // Decalre the streamReader
             StreamReader streamReader = null;
@@ -37,7 +37,7 @@ namespace cis237_assignment1
                 while((line = streamReader.ReadLine()) != null)
                 {
                     // Process the line
-                    processLine(line, beverages, beverageCollections, counter++);
+                    processLine(line, beverages, counter++);
                 }
 
                 
@@ -74,7 +74,7 @@ namespace cis237_assignment1
             }
         }
 
-        public void processLine(string line, Beverage[] beverages, BeverageCollection[] beveragesCollection, int index)
+        public void processLine(string line, Beverage[] beverages, int index)
         {
             // Declare array of parts that will contain the results of splitting the read in string
             string[] parts = line.Split(',');
@@ -88,10 +88,39 @@ namespace cis237_assignment1
 
             // Add a new beverage into the array that was passed in
             beverages[index] = new Beverage(bevID, bevName, bevPack, bevPrice, bevActiveTF);
-            beveragesCollection[index] = new BeverageCollection(bevName);
-            
-            
+           
         }
 
+        public void Search(Beverage[] beverages)
+        {
+            string beverageName = Console.ReadLine();
+            bool match = false;
+
+            for (int i = 0; i < beverages.Length; i++)
+            {
+                if (beverageName == beverages[i].ToString())
+                {
+                    match = true;
+                }
+                
+            }
+            if (match == true)
+            {
+                Console.WriteLine(); 
+                Console.WriteLine("Match has been found: ");
+            }
+            if (match == false)
+            {
+                Console.WriteLine("Match not found");
+            }
+        }
+
+        //public void Add(Beverage[] beverages)
+        //{
+        //    for (int i = 0; i < beverages.Length; i++)
+        //    {
+        //        Console.ReadLine() = beverages[i].ToString();
+        //    }
+        //}
     }
 }
