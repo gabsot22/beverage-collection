@@ -3,7 +3,7 @@
 ## Due: 01-22-2020
 
 ## Author
-
+Gabe Soto
 
 
 ## Description
@@ -101,5 +101,12 @@ Suggestion/Hints:
 | **Total**                  | **100**|
 
 ## Outside Resources Used
+Youtube, 
+Visual C# How to program,
+Previous projects
 
 ## Known Problems, Issues, And/Or Errors in the Program
+1. Did not even bother to do Search(), Add() in Beverage Class. Very confused
+2. Run the option 1 for loading the list once is not working how I want it to.
+3. When searching for beverage, you need to input the entire line of code, not just the ID# or name
+4. Could not figure out how to add a new item to the array.
