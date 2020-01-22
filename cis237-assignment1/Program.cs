@@ -25,7 +25,7 @@ namespace cis237_assignment1
             Beverage[] beverages = new Beverage[3942];
 
             // Making a new instance of the BeverageCollection class
-            BeverageCollection bevCollection = new BeverageCollection("1221 Cabernet Cuvee");
+            BeverageCollection bevCollection = new BeverageCollection();
 
             // Make instance of CSVProcessor
             CSVProcessor csvProcessor = new CSVProcessor();

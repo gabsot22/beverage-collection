@@ -49,6 +49,7 @@ namespace cis237_assignment1
             set { _beverageActiveTF = value; }
         }
 
+        // Method to put ID, Name, Pack, Price, and ActiveTF into a single string
         public override string ToString()
         {
             return _beverageID + " " +

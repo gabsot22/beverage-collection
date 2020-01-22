@@ -50,12 +50,6 @@ namespace cis237_assignment1
                 // Change boolean to true so you cant load list again
                 runOnce = true; 
             }
-            else
-            {
-                Console.WriteLine();
-                Console.WriteLine("Already Loaded List");
-                Console.WriteLine();
-            }
             
             if (input == "2")
             {
@@ -63,26 +57,23 @@ namespace cis237_assignment1
                 Console.WriteLine("Printed list successfully");
                 Console.WriteLine();
             }
-
+            
             if (input == "3")
             {
                 Console.WriteLine();
                 Console.WriteLine("Input beverage info exactly how it is displayed in the list ");
                 Console.WriteLine();
-
-                
-
-
             }
+            
             if (input == "4")
             {
                 Console.WriteLine();
                 Console.WriteLine("Add a beverage! ");
                 Console.WriteLine();
             }
-
-                // Return the input
-                return Int32.Parse(input);
+            
+            // Return the input
+            return Int32.Parse(input);
         }
 
         // Method for outputting array

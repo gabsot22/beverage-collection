@@ -1,10 +1,13 @@
-﻿
+﻿/* Gabriel Soto
+ * CIS 237 MW 6:00-8:15pm
+ * 1/22/20
+ * */
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
+using System.IO; // Use for streamreader
 
 namespace cis237_assignment1
 {
@@ -19,7 +22,7 @@ namespace cis237_assignment1
         // Methods
         public bool ImportCsv(string pathToCSVFile, Beverage[] beverages)
         {
-            // Decalre the streamReader
+            // Declare the streamReader
             StreamReader streamReader = null;
           
             try
@@ -91,13 +94,17 @@ namespace cis237_assignment1
            
         }
 
+        // Method to search for inputed beverage in the array
         public void Search(Beverage[] beverages)
         {
+            // Reads input line from user
             string beverageName = Console.ReadLine();
             bool match = false;
 
+            // Loop to search every line in the array
             for (int i = 0; i < beverages.Length; i++)
             {
+                // If the input matches the beverage... math is found
                 if (beverageName == beverages[i].ToString())
                 {
                     match = true;
@@ -107,7 +114,7 @@ namespace cis237_assignment1
             if (match == true)
             {
                 Console.WriteLine(); 
-                Console.WriteLine("Match has been found: ");
+                Console.WriteLine("Match has been found");
             }
             if (match == false)
             {
